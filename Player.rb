@@ -48,8 +48,12 @@ class Player
   def do_battle(damage)
     health_points=(@health_points -= damage)
     if @health_points < 1
+      @lives -= 1
+    end
+    if @lives < 1
       restart
     end
+
   end
 
   def restart
